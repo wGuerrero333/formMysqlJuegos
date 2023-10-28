@@ -1,0 +1,25 @@
+{% extends "basejuegos.html" %}
+{% block titulo %}
+Agregar juego
+{% endblock %}
+{% block contenido %}
+<section class="section">
+    <div class="columns">
+        <div class="column">
+            <h3 class="is-size-3">Agregando Mis juegos</h3>
+            <form action="{{url_for('guardar_juego')}}" method="post">
+                <label for="nombre">Nombre:</label>
+                <input required type="text" class="input" placeholder="Nombre" name="nombre" id="nombre">
+                <label for="descripcion">Descripción</label>
+                <input required type="text" class="input" placeholder="Descripción" name="descripcion" id="descripcion">
+                <label for="precio">Precio</label>
+                <!-- type=number le agrega decimales y botnes dinamicos -->
+                <input required class="input" placeholder="Precio" name="precio" id="precio" minlength="2" maxlength="8" size="10">
+                <button type="submit" class="button is-success mt-2">Guardar</button>
+                <a href="{{url_for('formulario_agregar_juego')}}" class="button is-primary mt-2">Ver lista juegos</a>
+            </form>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

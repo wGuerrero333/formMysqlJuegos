@@ -1,0 +1,44 @@
+{% extends "basejuegos.html" %}
+{% block titulo %} Listado Juegos {% endblock %}
+{% block contenido %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Descripción</th>
+           
+
+           
+        </tr>
+    </thead>
+    <tbody>
+        {% for Caracteristicajuego in juegoencontrado %}
+        <tr>
+            <td>{{Caracteristicajuego[0]}}</td>
+            <td>{{Caracteristicajuego[1]}}</td>
+            <td>{{Caracteristicajuego[2]}}</td>
+            <td>{{Caracteristicajuego[3]}}</td>
+        
+                {# ASI SE COMENTA EN JINJA  COMO PASAR EL ID #}
+               
+            </td>
+        </tr>
+       
+        {% endfor %}
+    </tbody>
+</table>
+<td>
+    {# Pasar el id (lo que hay en juego[0] #}
+    <a href="{{url_for('juegos') }}" class="button is-info">Agregar Juego</a>
+</td>
+
+<td>
+    {# Pasar el id (lo que hay en juego[0] #}
+    <a href="{{url_for('formulario_agregar_juego') }}" class="button is-info">Ver listado Juegos</a>
+</td>
+                      
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "basejuegos.html" %}
+{% block titulo %}
+Buscar juego en db
+{% endblock %}
+{% block contenido %}
+
+<form action="{{url_for('buscar_juego')}}" method = 'post'>
+    {{formularioJuegos.nombre.label}} {{formularioJuegos.nombre}}
+
+    {{formularioJuegos.submit( class='btn btn-success')}}
+   
+</form>
+<br>
+<br>
+
+<td>
+    {# anchor sin argumentos adicinales  #}
+    <a href="{{url_for('juegos') }}" class="button is-info">Agregar Juego</a>
+</td>
+
+<td>
+    <a href="{{url_for('formulario_agregar_juego') }}" class="button is-info">Ver listado Juegos</a>
+</td>
+
+{% endblock %}
+
+<!-- # action hace que cuando se accione el button la info se envie al URL__for -->

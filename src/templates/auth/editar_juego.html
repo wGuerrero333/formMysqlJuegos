@@ -1,0 +1,25 @@
+{% extends "basejuegos.html" %}
+{% block titulo %}
+Editar juego
+{% endblock %}
+{% block contenido %}
+<section class="section">
+    <div class="columns">
+        <div class="column">
+            <h3 class="is-size-3">Editar juego</h3>
+            <form action="{{url_for('actualizar_juego')}}" method="post">
+                {# Enviar el id en un campo oculto #}
+                <input type="hidden" name="id" value="{{juego[0]}}">
+                <label for="nombre">Nombre:</label>
+                <input value="{{juego[1]}}" required type="text" class="input" placeholder="Nombre" name="nombre" id="nombre">
+                <label for="descripcion">Descripción</label>
+                <input value="{{juego[2]}}" required type="text" class="input" placeholder="Descripción" name="descripcion" id="descripcion">
+                <label for="precio">Precio</label>
+                <input value="{{juego[3]}}" required type="number" class="input" placeholder="Precio" name="precio" id="precio">
+                <button type="submit" class="button is-success mt-2">Guardar</button>
+                <a href="{{url_for('juegos')}}" class="button is-primary mt-2">Volver</a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
